@@ -1,0 +1,46 @@
+/* Start Global*/
+/*font-family: 'Raleway', sans-serif;*/
+/*color:#1abc9c;*/
+*{
+     box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+}
+body
+{
+  
+
+}
+
+ul
+{
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+}
+img{
+    width: 800;
+    height:800;
+}
+/*End Global*/
+
+/*Start Work*/
+
+
+/*End Work*/
+
+/*start My Frame Work*/
+.fl-left
+{
+    float:left;
+}
+.fl-right
+{
+    float:right;
+}
+.clearfix
+{
+    clear:both; 
+}
+
+/*End My Framework*/
