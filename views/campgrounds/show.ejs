@@ -1,0 +1,87 @@
+<%- include('../partials/header') -%>
+<style>
+  .comment {
+      background:none;
+      padding:4px;
+      border:0px;
+  }
+
+  .comment-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom:-2px;
+  }
+
+  .comment-heading strong {
+    font-size: 1.4em;
+  }
+
+  .comment-text {
+    font-size: 1.3em;
+  }
+  .thumbnail{
+      padding:0px;
+  }
+  .caption-full{
+      padding:7px 10px;
+  }
+</style>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10 col-md-3">
+      <p class="lead">Yelp Camp</p>
+      <div class="list-group">
+        <li class="list-group-item active">Info 1</li>
+        <li class="list-group-item">Info 2</li>
+        <li class="list-group-item">Info 3</li>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="thumbnail">
+        <img
+          style=""
+          class="img-responsive"
+          src="<%= campground.image %>"
+        />
+        <div class="caption-full">
+          <h4 class="pull-right">
+            9.00$/hr
+          </h4>
+          <h4>
+            <a href="campgrounds/<%=campground._id%>"><%= campground.name %></a>
+          </h4>
+          <p><%= campground.description %></p>
+        </div>
+      </div>
+      <div class="well">
+        <div class="text-right">
+          <a
+            class="btn btn-lg btn-secondary"
+            href="/campgrounds/<%=campground._id%>/comments/new"
+          >
+            Add Comment</a
+          >
+        </div>
+        <ul class="comments list-group">
+          <% campground.comments.forEach((comment)=>{%>
+
+          <li class="comment list-group-item row">
+            <div class="row">
+              <div class="col-md-12 ">
+                <div class="comment-heading">
+                  <strong><%=comment.author%></strong>
+
+                  <h4 class="pull-right"><%=comment.date.toDateString() %></h4>
+                </div>
+                <p class="comment-text"><%=comment.text%></p>
+              </div>
+            </div>
+          </li>
+          <%})%>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('../partials/footer') -%>
